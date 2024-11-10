@@ -46,10 +46,13 @@ filter.addEventListener("click", ()=>{
             items.sort((a, b) => a.textContent.localeCompare(b.textContent));
          items.forEach(item => lists.appendChild(item));
         }
-        if (items[i].textContent.localeCompare(items[i+1].textContent) < 0 ){
+        else if (items[i].textContent.localeCompare(items[i+1].textContent) < 0 ){
             temp = items[i+1];
             items[i+1] = items[i];
             items[i] = temp;
+        }
+        else{
+            return 0;
         }
     }
 })
