@@ -4,14 +4,19 @@ let lists = document.querySelector(".lists-container");
 
 function addTask() {
   //failed
-  if (input.value == "") {
-    input.style.backgroundColor = "crimson";
-  }
+  
   //main
-  else {
+ 
+    input.classList.toggle("adder");
+    if (input.value === "") {
+      return;
+    }
+    else{
     let li = document.createElement("li");
     li.textContent = input.value;
-    li.style.marginBottom = "10px";
+    input.value = "";
+    li.style.marginTop = '15px';
+    li.style.marginBottom = "15px";
     lists.appendChild(li);
     let img = document.createElement("img");
     img.src = "./assets/img/non_hover.svg";
@@ -24,7 +29,7 @@ function addTask() {
       img.src = "./assets/img/non_hover.svg";
     });
   }
-}
+  }
 
 lists.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
