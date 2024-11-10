@@ -37,6 +37,8 @@ lists.addEventListener("click", (e)=>{
 
 
 let filter = document.querySelector(".filter");
+let filter2 = document.querySelector(".filter2");
+filter2.style.display = 'none';
 
 filter.addEventListener("click", ()=>{
     let items = Array.from(lists.children);
@@ -45,14 +47,24 @@ filter.addEventListener("click", ()=>{
         if(items[i].textContent.localeCompare(items[i+1].textContent) > 0){
             items.sort((a, b) => a.textContent.localeCompare(b.textContent));
          items.forEach(item => lists.appendChild(item));
+         filter.style.display = 'none';
+         filter2.style.display = 'block';
+         
+
         }
-        else if (items[i].textContent.localeCompare(items[i+1].textContent) < 0 ){
-            temp = items[i+1];
-            items[i+1] = items[i];
-            items[i] = temp;
-        }
-        else{
-            return 0;
-        }
+        
+        //! bele bir sey eleki basanda img deyissin o birine bu biri sekil itsin ama sora o sekile klik eliyende tersine olaraq o sekilde filtrizasiya elesin.
+        
     }
 })
+
+filter2.addEventListener("click", ()=>{
+    let items = Array.from(lists.children);
+    for (let i = 0; i < items.length; i++){
+        if(items[i].textContent.localeCompare(items[i+1].textContent) < 0){
+            items.sort((a, b) => b.textContent.localeCompare(a.textContent));
+         items.forEach(item => lists.appendChild(item));
+         filter2.style.display = 'none';
+         filter.style.display = 'block';
+    }
+    }})
