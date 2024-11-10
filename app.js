@@ -40,10 +40,16 @@ let filter = document.querySelector(".filter");
 
 filter.addEventListener("click", ()=>{
     let items = Array.from(lists.children);
-    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
-    items.forEach(item => lists.appendChild(item));
 
-    if(items.sort === true){
-        items.sort((a, b) => a.textContent.localeCompare(b.textContent)).reverse();
+    for (let i = 0; i < items.length; i++){
+        if(items[i].textContent.localeCompare(items[i+1].textContent) > 0){
+            items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+         items.forEach(item => lists.appendChild(item));
+        }
+        if (items[i].textContent.localeCompare(items[i+1].textContent) < 0 ){
+            temp = items[i+1];
+            items[i+1] = items[i];
+            items[i] = temp;
+        }
     }
 })
