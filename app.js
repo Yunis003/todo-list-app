@@ -34,3 +34,16 @@ lists.addEventListener("click", (e)=>{
         e.target.parentElement.remove();
     }
 })
+
+
+let filter = document.querySelector(".filter");
+
+filter.addEventListener("click", ()=>{
+    let items = Array.from(lists.children);
+    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    items.forEach(item => lists.appendChild(item));
+
+    if(items.sort === true){
+        items.sort((a, b) => a.textContent.localeCompare(b.textContent)).reverse();
+    }
+})

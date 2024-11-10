@@ -68,3 +68,8 @@ li{
 span{
     cursor: pointer;
 }
+.filter{
+    cursor: pointer;
+    color: red;
+    background-color: antiquewhite;
+}
