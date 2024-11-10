@@ -5,17 +5,16 @@ lists.style.display = "none";
 
 function addTask() {
   //failed
-  
+
   //main
- 
-    input.classList.toggle("adder");
-    if (input.value === "") {
-      return;
-    }
-    else{ 
-      lists.style.display = "flex";
-      lists.style.flexDirection = "column";
-      lists.style.gap = "10px"; 
+
+  input.classList.toggle("adder");
+  if (input.value === "") {
+    return;
+  } else {
+    lists.style.display = "flex";
+    lists.style.flexDirection = "column";
+    lists.style.gap = "10px";
     let li = document.createElement("li");
     li.textContent = input.value;
     input.value = "";
@@ -31,7 +30,7 @@ function addTask() {
       img.src = "./assets/img/non_hover.svg";
     });
   }
-  }
+}
 
 lists.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
@@ -42,6 +41,18 @@ lists.addEventListener("click", (e) => {
 let filter = document.querySelector(".filter");
 let filter2 = document.querySelector(".filter2");
 filter2.style.display = "none";
+
+filter.addEventListener("mouseenter", () => {
+  filter.src = "./assets/img/down_hover.svg";
+})
+filter.addEventListener("mouseleave", () => {
+  filter.src = "./assets/img/down.svg";
+})
+filter2.addEventListener("mouseenter", () => {
+  filter2.src = "./assets/img/up_hover.svg";
+})
+filter2.addEventListener("mouseleave", () => {
+  filter2.src = "./assets/img/up.svg";})
 
 //? A-Z Filter
 filter.addEventListener("click", () => {
