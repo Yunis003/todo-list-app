@@ -1,6 +1,7 @@
 let input = document.querySelector(".add");
 let btn = document.querySelector(".add-btn");
 let lists = document.querySelector(".lists-container");
+lists.style.display = "none";
 
 function addTask() {
   //failed
@@ -11,12 +12,13 @@ function addTask() {
     if (input.value === "") {
       return;
     }
-    else{
+    else{ 
+      lists.style.display = "flex";
+      lists.style.flexDirection = "column";
+      lists.style.gap = "10px"; 
     let li = document.createElement("li");
     li.textContent = input.value;
     input.value = "";
-    li.style.marginTop = '15px';
-    li.style.marginBottom = "15px";
     lists.appendChild(li);
     let img = document.createElement("img");
     img.src = "./assets/img/non_hover.svg";
