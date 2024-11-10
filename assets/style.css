@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
     list-style: none;
 }
 body{
@@ -14,43 +13,71 @@ body{
 .container{
     width: 450px;
     height: 350px;
-    border: 1px solid transparent;
     box-shadow: 0 0 3px black;
     border-radius: 8px;
-   background-color: #FFDC40;
+    background-color: #FFDC40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .add{
     border-radius:8px;
     padding: 5px;
     width: 350px;
-    border:none;
-    background-color: black;
-    color: #FFF;
+    border: none;
+    box-shadow: 0 0 3px black;
+    background-color: transparent;
+    color: black;
     margin-top: 20px;
 }
+
 .add-button{
     background-color: #833AE0;
-    border-radius:12px;
+    border-radius:22px;
     color: #FFF;
     width: 200px;
     padding: 12px;
     border:none;
     font-size: 1em;
-    
+    position: relative;
     &:hover{
         background-color: #975de2;
         cursor: pointer;
     }
 }
+.add-button::after{
+    content: '+';
+    width: 35px;
+    color: #FFF;
+    position: absolute;
+    border-radius: 18px;
+    top: 2px;
+    left: 0;
+    padding: 10px;
+    
+    background-color: #975de2;
+
+}
 .inner-cont{
     background-color: #FFF;
-    width: 450px;
-    height: 100%;
+    width: 100%;
+    border-bottom-left-radius:8px ;
+    border-bottom-right-radius: 8px;
+    height: 300px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items:center;
+    gap: 30px;
+}
+.inner-cont h2{
+    margin-top: 10px;
+}
+.inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .interactive-side{
     display: flex;
@@ -65,11 +92,10 @@ li{
     justify-content: space-between;
     align-items: center;
 }
-span{
+img{
     cursor: pointer;
 }
 .filter{
     cursor: pointer;
-    color: red;
-    background-color: antiquewhite;
+    align-self: flex-end;
 }
