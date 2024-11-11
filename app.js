@@ -1,14 +1,15 @@
 let input = document.querySelector(".add");
 let btn = document.querySelector(".add-btn");
 let lists = document.querySelector(".lists-container");
-lists.style.display = "none";
+let removeBtn = document.querySelector(".remove-btn");
+lists.style.display = "none"; 
 
 function addTask() {
   //failed
 
-  //main
-
+  //main 
   input.classList.toggle("adder");
+  removeBtn.classList.toggle("adder2");
   if (input.value === "") {
     return;
   } else {
@@ -31,6 +32,10 @@ function addTask() {
     });
   }
 }
+
+removeBtn.addEventListener("click", () => {
+  input.style.display = "none"; 
+});
 
 lists.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
@@ -81,3 +86,6 @@ filter2.addEventListener("click", () => {
     }
   }
 });
+
+
+
