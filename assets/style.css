@@ -53,13 +53,14 @@ body{
 }
 .add-button::after{
     content: '+';
-    width: 35px;
+    width: 37px;
+    height: 21px;
     color: #FFF;
     position: absolute;
-    border-radius: 18px;
-    top: 2px;
-    left: 0;
-    padding: 10px;
+    border-radius: 22px;
+    top: 0;
+    left:0;
+    padding: 11px;
     
     background-color: #975de2;
 

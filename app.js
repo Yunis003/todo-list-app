@@ -1,4 +1,4 @@
-// Calling DOM Elements
+//? Calling DOM Elements
 let input = document.querySelector(".add");
 let inputSide = document.querySelector(".input-side");
 let btn = document.querySelector(".add-btn");
@@ -8,8 +8,9 @@ let filter = document.querySelector(".filter");
 let filter2 = document.querySelector(".filter2");
 lists.style.display = "none"; 
 
-// Main Function And Event Listeners
+//? Main Function And Event Listeners
 function addTask() {
+  
   // input.classList.toggle("adder");
   inputSide.classList.toggle("adder");
 
@@ -54,7 +55,6 @@ lists.addEventListener("click", (e) => {
     lists.style.display = "none";
   }
 });
-
 
 
 filter2.style.display = "none";
