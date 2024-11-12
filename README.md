@@ -14,7 +14,7 @@ To get started with the Todo List App, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/todo-list-app.git
+    git clone https://github.com/Yunis003/todo-list-app.git
     ```
 2. Navigate to the project directory:
     ```sh
