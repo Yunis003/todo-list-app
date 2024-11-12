@@ -1,15 +1,15 @@
+// Calling DOM Elements
 let input = document.querySelector(".add");
 let inputSide = document.querySelector(".input-side");
 let btn = document.querySelector(".add-btn");
 let lists = document.querySelector(".lists-container");
 let removeBtn = document.querySelector(".remove-btn");
+let filter = document.querySelector(".filter");
+let filter2 = document.querySelector(".filter2");
 lists.style.display = "none"; 
 
+// Main Function And Event Listeners
 function addTask() {
-  //failed
-
-  //main 
-  //! elae olunub
   // input.classList.toggle("adder");
   inputSide.classList.toggle("adder");
 
@@ -50,12 +50,15 @@ lists.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
     e.target.parentElement.remove();
   }
+  if (lists.children.length === 0) {
+    lists.style.display = "none";
+  }
 });
 
-let filter = document.querySelector(".filter");
-let filter2 = document.querySelector(".filter2");
-filter2.style.display = "none";
 
+
+filter2.style.display = "none";
+//? Hover Effect For Filter Buttons
 filter.addEventListener("mouseenter", () => {
   filter.src = "./assets/img/down_hover.svg";
 })
