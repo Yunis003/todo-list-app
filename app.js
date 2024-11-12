@@ -1,4 +1,5 @@
 let input = document.querySelector(".add");
+let inputSide = document.querySelector(".input-side");
 let btn = document.querySelector(".add-btn");
 let lists = document.querySelector(".lists-container");
 let removeBtn = document.querySelector(".remove-btn");
@@ -8,8 +9,10 @@ function addTask() {
   //failed
 
   //main 
-  input.classList.toggle("adder");
-  removeBtn.classList.toggle("adder2");
+  //! elae olunub
+  // input.classList.toggle("adder");
+  inputSide.classList.toggle("adder");
+
   if (input.value === "") {
     return;
   } else {
@@ -34,9 +37,15 @@ function addTask() {
 }
 
 removeBtn.addEventListener("click", () => {
-  input.style.display = "none"; 
-});
-
+  inputSide.classList.toggle("adder");
+  input.value = "";
+})
+removeBtn.addEventListener("mouseenter", () => {
+  removeBtn.src = "./assets/img/hover.svg";
+})
+removeBtn.addEventListener("mouseleave", () => {
+  removeBtn.src = "./assets/img/non_hover.svg";
+})
 lists.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
     e.target.parentElement.remove();
