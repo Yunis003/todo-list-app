@@ -47,6 +47,7 @@ removeBtn.addEventListener("mouseenter", () => {
 removeBtn.addEventListener("mouseleave", () => {
   removeBtn.src = "./assets/img/non_hover.svg";
 })
+
 lists.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
     e.target.parentElement.remove();
@@ -74,30 +75,27 @@ filter2.addEventListener("mouseleave", () => {
 //? A-Z Filter
 filter.addEventListener("click", () => {
   let items = Array.from(lists.children);
-
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].textContent.localeCompare(items[i + 1].textContent) > 0) {
-      items.sort((a, b) => a.textContent.localeCompare(b.textContent));
-      items.forEach((item) => lists.appendChild(item));
-      filter.style.display = "none";
-      filter2.style.display = "block";
+  items.sort((a, b) => {
+    if (a.textContent && b.textContent) {
+      return a.textContent.localeCompare(b.textContent);
     }
-    //! bele bir sey eleki basanda img deyissin o birine bu biri sekil itsin ama sora o sekile klik eliyende tersine olaraq o sekilde filtrizasiya elesin.
-  }
+    return 0;
+  });
+  items.forEach(item => lists.appendChild(item));
+  filter.style.display = "none";
+  filter2.style.display = "block";
 });
 
 //? Z-A Filter
 filter2.addEventListener("click", () => {
   let items = Array.from(lists.children);
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].textContent.localeCompare(items[i + 1].textContent) < 0) {
-      items.sort((a, b) => b.textContent.localeCompare(a.textContent));
-      items.forEach((item) => lists.appendChild(item));
-      filter2.style.display = "none";
-      filter.style.display = "block";
+  items.sort((a, b) => {
+    if (a.textContent && b.textContent) {
+      return b.textContent.localeCompare(a.textContent);
     }
-  }
+    return 0;
+  });
+  items.forEach(item => lists.appendChild(item));
+  filter2.style.display = "none";
+  filter.style.display = "block";
 });
-
-
-
