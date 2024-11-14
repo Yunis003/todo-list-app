@@ -20,6 +20,7 @@ function addTask() {
     lists.style.display = "flex";
     lists.style.flexDirection = "column";
     lists.style.gap = "10px";
+
     let li = document.createElement("li");
     li.textContent = input.value;
     input.value = "";
@@ -34,6 +35,9 @@ function addTask() {
     img.addEventListener("mouseleave", () => {
       img.src = "./assets/img/non_hover.svg";
     });
+
+    filter.disabled = false;
+    filter2.disabled = false;
   }
 }
 
@@ -54,6 +58,8 @@ lists.addEventListener("click", (e) => {
   }
   if (lists.children.length === 0) {
     lists.style.display = "none";
+    filter.disabled = true;
+    filter2.disabled = true;
   }
 });
 
@@ -99,3 +105,9 @@ filter2.addEventListener("click", () => {
   filter2.style.display = "none";
   filter.style.display = "block";
 });
+
+//! Input cox olanda uzunluqunu neterse ele seliqeli gorsensin
+//! Responsive design
+//! ordered list kimi ele 123 olanda 2 ni silende 1 2 olsun 13 yox 
+//! inputda maxlength olmasin basqa cur ele alt alta dussun yazilar uzun olduqda
+
