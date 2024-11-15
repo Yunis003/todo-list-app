@@ -106,8 +106,29 @@ filter2.addEventListener("click", () => {
   filter.style.display = "block";
 });
 
-//! Input cox olanda uzunluqunu neterse ele seliqeli gorsensin
-//! Responsive design
-//! ordered list kimi ele 123 olanda 2 ni silende 1 2 olsun 13 yox 
-//! inputda maxlength olmasin basqa cur ele alt alta dussun yazilar uzun olduqda
+//! Input cox olanda uzunluqunu neterse ele seliqeli gorsensin 
+//! Gultaca dediyin kimi setir uzun olanda heighti artirin avtomatik ortalasin
+//? ul ucun:
+// display: flex;
+// align-items: center;
+// justify-content: space-between;
+// width: 320px; 
+// min-width: 280px;
+// max-width: 320px;
+// padding: 7px 15px;
+// gap: 5px;
+// text-align: left;
+
+//? li ucun:
+// flex: 1;
+// text-align: left;
+// word-wrap: break-word;
+// white-space: normal;
+// max-width: 280px; 
+//! Responsive design  
+//? prosda obsi containerin olcusunu balacalat ve ona gore deyisiklikler et
+
+
+//! inputunu qisalt sola teref divi artir input kimi gorunsun
+
 
