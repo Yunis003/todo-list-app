@@ -8,6 +8,7 @@ let filter = document.querySelector(".filter");
 let filter2 = document.querySelector(".filter2");
 lists.style.display = "none"; 
 
+
 //? Main Function And Event Listeners
 function addTask() {
   
@@ -60,8 +61,6 @@ lists.addEventListener("click", (e) => {
   }
   if (lists.children.length === 0) {
     lists.style.display = "none";
-    filter.disabled = true;
-    filter2.disabled = true;
   }
 });
 
@@ -82,6 +81,9 @@ filter2.addEventListener("mouseleave", () => {
 
 //? A-Z Filter
 filter.addEventListener("click", () => {
+  if (lists.children.length === 0 || lists.children.length === 1) {
+    return;
+  }
   let items = Array.from(lists.children);
   items.sort((a, b) => {
     if (a.textContent && b.textContent) {
@@ -96,6 +98,9 @@ filter.addEventListener("click", () => {
 
 //? Z-A Filter
 filter2.addEventListener("click", () => {
+  if (lists.children.length === 0 || lists.children.length === 1) {
+    return;
+  }
   let items = Array.from(lists.children);
   items.sort((a, b) => {
     if (a.textContent && b.textContent) {
@@ -107,34 +112,6 @@ filter2.addEventListener("click", () => {
   filter2.style.display = "none";
   filter.style.display = "block";
 });
-
-//! Input cox olanda uzunluqunu neterse ele seliqeli gorsensin 
-//! Gultaca dediyin kimi setir uzun olanda heighti artirin avtomatik ortalasin
-//? ul ucun:
-// display: flex;
-// align-items: center;
-// justify-content: space-between;
-// width: 320px; 
-// min-width: 280px;
-// max-width: 320px;
-// padding: 7px 15px;
-// gap: 5px;
-// text-align: left;
-
-//? li ucun:
-// flex: 1;
-// text-align: left;
-// word-wrap: break-word;
-// white-space: normal;
-// max-width: 280px; 
-//! Responsive design  
-//? prosda obsi containerin olcusunu balacalat ve ona gore deyisiklikler et
-
-
-//! inputunu qisalt sola teref divi artir input kimi gorunsun
-
-
-//* ele bir sey eleki li elementleri ve img ul nin daxilinde bir divin icinde olsun, sonra o dive flex ver listin widthini ver ki bir birleri ile ust uste dusmesinler ayricaliqlar olsun
 
 
 
