@@ -18,23 +18,26 @@ body{
     justify-content: center;
     align-items: center;
 }
-.add{
-    border-radius:8px;
-    padding: 6px;
+/*! input hissenin duzeldilmesi*/
+.input-side{
     width: 373.5px;
-    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    border-radius:8px;
     box-shadow: 0 0 3px black;
+    padding: 6px;
     margin-top: 20px;
 }
-.input-side{
-    position: relative;
+.add{
+    width: 335px;
+    border: none;
+    &:focus{
+        border:none;
+        outline: none;
+    }
 }
-.remove-btn{
-    position: absolute;
-    right: 8px;
-    top: 23px;
-    z-index: 1;
-}
+/*! input hissenin sonu */
 
 .add-button{
     background-color: #833AE0;
@@ -98,23 +101,25 @@ body{
 .lists-container{
     list-style-type: decimal;
     margin-top: 15px;
-    margin-bottom: 15px;
     padding: 5px;
     box-shadow: 0 0 1px black;
     border-radius: 8px;
 }
-
+.ulContainer{
+    width: 370px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
 li{
-    width: 340px;
     margin-left: 20px;
     list-style-type: decimal;
     position: relative;
-    
     flex: 1;
     text-align: left;
     word-wrap: break-word;
     white-space: normal;
-    max-width: 280px;
+    max-width: 310px;
 }
 img{
     cursor: pointer;

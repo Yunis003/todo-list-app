@@ -14,20 +14,24 @@ function addTask() {
   // input.classList.toggle("adder");
   inputSide.classList.toggle("adder");
 
-  if (input.value === "") {
+  if (input.value.trim() === "") {
+    input.value = "";
     return;
-  } else {
+  }
     lists.style.display = "flex";
     lists.style.flexDirection = "column";
     lists.style.gap = "10px";
+    let ulContainer = document.createElement("div");
+ulContainer.className = 'ulContainer';
 
     let li = document.createElement("li");
     li.textContent = input.value;
     input.value = "";
-    lists.appendChild(li);
+    ulContainer.appendChild(li);
     let img = document.createElement("img");
     img.src = "./assets/img/non_hover.svg";
-    li.append(img);
+    ulContainer.append(img);
+    lists.appendChild(ulContainer);
 
     img.addEventListener("mouseenter", () => {
       img.src = "./assets/img/hover.svg";
@@ -35,11 +39,9 @@ function addTask() {
     img.addEventListener("mouseleave", () => {
       img.src = "./assets/img/non_hover.svg";
     });
-
     filter.disabled = false;
     filter2.disabled = false;
   }
-}
 
 removeBtn.addEventListener("click", () => {
   inputSide.classList.toggle("adder");
@@ -130,5 +132,9 @@ filter2.addEventListener("click", () => {
 
 
 //! inputunu qisalt sola teref divi artir input kimi gorunsun
+
+
+//* ele bir sey eleki li elementleri ve img ul nin daxilinde bir divin icinde olsun, sonra o dive flex ver listin widthini ver ki bir birleri ile ust uste dusmesinler ayricaliqlar olsun
+
 
 
