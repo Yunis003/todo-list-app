@@ -167,7 +167,7 @@ img{
         left:0;
     }
     li{
-        width: 200px;
+        max-width: 240px;
     }
 }
 @media  screen and (min-width:320px) and (max-width:400px) {
@@ -195,5 +195,8 @@ img{
         height: 12px;
         top: 0;
         left:0;
+    }
+    li{
+        max-width: 190px;
     }
 }
