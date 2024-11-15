@@ -57,13 +57,16 @@ body{
 .add-button::after{
     content: '+';
     width: 37px;
-    height: 21px;
+    height: 20px;
     color: #FFF;
     position: absolute;
     border-radius: 22px;
     top: 0;
     left:0;
     padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
     
     background-color: #975de2;
 
@@ -141,41 +144,56 @@ img{
     .container{
         width: 350px;
     }
+    .inner{
+        width: 280px;
+    }
+    .input-side{
+        width: 305px;
+    }
     .add{
-        width: 265px;
+        width: 255px;
+    }
+    .ulContainer{
+        width: 300px;
     }
     .add-button{
-        width: 200px;
+        padding: 8px;
+        width: 160px;
     }
-    .inner-cont{
-        width: 100%;
+    .add-button::after{
+        width: 25px;
+        height: 12px;
+        top: 0;
+        left:0;
     }
-    .inner{
-        width: 250px;
-    }
-    
     li{
-        width: 230px;
+        width: 200px;
     }
 }
 @media  screen and (min-width:320px) and (max-width:400px) {
     .container{
         width: 300px;
     }
+    .inner{
+        width: 230px;
+    }
+    .input-side{
+        width: 255px;
+    }
     .add{
-        width: 215px;
+        width: 205px;
+    }
+    .ulContainer{
+        width: 250px;
     }
     .add-button{
-        width: 200px;
+        padding: 8px;
+        width: 150px;
     }
-    .inner-cont{
-        width: 100%;
+    .add-button::after{
+        width: 17px;
+        height: 12px;
+        top: 0;
+        left:0;
     }
-    .inner{
-        width: 200px;
-    }
-    li{
-        width: 180px;
-    }
-    
 }
