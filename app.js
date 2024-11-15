@@ -12,7 +12,6 @@ lists.style.display = "none";
 //? Main Function And Event Listeners
 function addTask() {
   
-  // input.classList.toggle("adder");
   inputSide.classList.toggle("adder");
 
   if (input.value.trim() === "") {
@@ -23,7 +22,7 @@ function addTask() {
     lists.style.flexDirection = "column";
     lists.style.gap = "10px";
     let ulContainer = document.createElement("div");
-ulContainer.className = 'ulContainer';
+    ulContainer.className = 'ulContainer';
 
     let li = document.createElement("li");
     li.textContent = input.value;
@@ -102,9 +101,9 @@ filter2.addEventListener("click", () => {
     return;
   }
   let items = Array.from(lists.children);
-  items.sort((a, b) => {
-    if (a.textContent && b.textContent) {
-      return b.textContent.localeCompare(a.textContent);
+  items.sort((c, d) => {
+    if (c.textContent && d.textContent) {
+      return d.textContent.localeCompare(c.textContent);
     }
     return 0;
   });
@@ -115,3 +114,49 @@ filter2.addEventListener("click", () => {
 
 
 
+
+// inputSide.classList.toggle("adder");
+
+//   if (input.value.trim() === "") {
+//     input.value = "";
+//     return;
+//   }
+//     lists.style.display = "flex";
+//     lists.style.flexDirection = "column";
+//     lists.style.gap = "10px";
+//     let ulContainer = document.createElement("div");
+// ulContainer.className = 'ulContainer';
+
+//     let li = document.createElement("li");
+//     li.textContent = input.value;
+//     input.value = "";
+//     ulContainer.appendChild(li);
+//     let img = document.createElement("img");
+//     img.src = "./assets/img/non_hover.svg";
+//     ulContainer.append(img);
+//     lists.appendChild(ulContainer);
+
+//     img.addEventListener("mouseenter", () => {
+//       img.src = "./assets/img/hover.svg";
+//     });
+//     img.addEventListener("mouseleave", () => {
+//       img.src = "./assets/img/non_hover.svg";
+//     });
+//     filter.disabled = false;
+//     filter2.disabled = false;
+//filterize practice
+// filter2.addEventListener("click", () => {
+//   if (lists.children.length === 0 || lists.children.length === 1) {
+//     return;
+//   }
+//   let items = Array.from(lists.children);
+//   items.sort((a, b) => {
+//     if (a.textContent && b.textContent) {
+//       return b.textContent.localeCompare(a.textContent);
+//     }
+//     return 0;
+//   });
+//   items.forEach(item => lists.appendChild(item));
+//   filter2.style.display = "none";
+//   filter.style.display = "block";
+// });
